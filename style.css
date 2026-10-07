@@ -1,0 +1,50 @@
+:root{--bg:#0b0d14;--card:#141826;--card2:#1b2133;--line:#262d45;--text:#e8ebf5;--muted:#8a93ad;--a:#7c5cff;--b:#22d3ee;--r:16px}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:radial-gradient(900px 500px at 80% -10%,#2a1f5c55,transparent),var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+.header{position:sticky;top:0;z-index:10;background:#0b0d14cc;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav button{background:none;border:0;color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer;font:inherit;font-size:.92rem;transition:.2s}
+.nav button:hover{color:var(--text);background:var(--card)}
+.nav button.active{color:#fff;background:var(--card2)}
+.view{display:none;padding:32px 0 60px}.view.active{display:block;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{text-align:center;padding:90px 0 60px}
+.hero h1{font-size:clamp(2.2rem,7vw,4rem);line-height:1.1;margin-bottom:18px;background:linear-gradient(120deg,#fff,var(--b) 50%,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.15rem;max-width:520px;margin:0 auto 32px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:20px}
+h2{font-size:1.4rem;margin-bottom:12px}.title{margin-bottom:20px}
+h3{font-size:.95rem;margin:20px 0 10px;color:var(--muted);font-weight:600}
+.muted{font-weight:400;opacity:.7}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.opt{background:var(--card2);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px;cursor:pointer;font:inherit;text-align:left;transition:.2s}
+.opt:hover{border-color:var(--a);transform:translateY(-2px)}
+.opt.sel{border-color:var(--a);background:#7c5cff26;box-shadow:0 0 0 1px var(--a)}
+.opt small{display:block;color:var(--muted);font-size:.8rem;margin-top:2px}
+input{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--text);font:inherit}
+input:focus{outline:2px solid var(--a);border-color:transparent}
+.btn{border:1px solid var(--line);background:var(--card2);color:var(--text);padding:11px 18px;border-radius:12px;cursor:pointer;font:inherit;font-weight:600;transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--a)}
+.btn.primary{background:linear-gradient(120deg,var(--a),#5b8cff);border:0;color:#fff;box-shadow:0 8px 24px #7c5cff44}
+.btn.big{padding:15px 30px;font-size:1.05rem}.btn.full{width:100%;margin-top:22px}
+.btn.danger:hover{border-color:#f87171;color:#f87171}
+.btn:focus-visible,.opt:focus-visible,.nav button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+.hidden{display:none}
+.result h2{font-size:1.6rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.tag{background:var(--card2);border:1px solid var(--line);padding:3px 12px;border-radius:99px;font-size:.85rem}
+.card ul{padding-left:20px;margin:8px 0}.card li{margin:4px 0}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0b0d14;border:1px solid var(--line);border-radius:12px;padding:16px;font:.85rem/1.6 ui-monospace,Menlo,Consolas,monospace;max-height:420px;overflow:auto;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.grid .card{margin:0;display:flex;flex-direction:column}
+.grid .card p{color:var(--muted);font-size:.92rem;margin:6px 0}
+.grid .actions{margin-top:auto;padding-top:14px}
+.empty{color:var(--muted);text-align:center;padding:50px 10px;grid-column:1/-1}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:#16a34a;color:#fff;padding:12px 22px;border-radius:12px;opacity:0;pointer-events:none;transition:.3s;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:560px){.hero{padding:50px 0 30px}.header-in{justify-content:center}.card{padding:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Idea Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="wrap header-in">
+    <a href="#home" class="logo" data-nav="home">💡 AI Idea Generator</a>
+    <nav class="nav">
+      <button data-nav="home" class="active">Главная</button>
+      <button data-nav="generator">Генератор</button>
+      <button data-nav="saved">Сохранённые</button>
+      <button data-nav="history">История</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ГЛАВНАЯ -->
+  <section id="view-home" class="view active">
+    <div class="hero">
+      <h1>Не знаешь, что создать?</h1>
+      <p>Придумай идею проекта и получи готовый промпт для AI-кодера.</p>
+      <button class="btn primary big" id="heroBtn">✨ Сгенерировать идею</button>
+    </div>
+  </section>
+
+  <!-- ГЕНЕРАТОР -->
+  <section id="view-generator" class="view">
+    <div class="card" id="generator">
+      <h2>Генератор идей</h2>
+      <h3>Тип проекта</h3>
+      <div class="chips" id="typeChips"></div>
+      <h3>Сложность</h3>
+      <div class="levels" id="levelChips"></div>
+      <h3>Интерес <span class="muted">(необязательно)</span></h3>
+      <input type="text" id="interestInput" placeholder="Minecraft, AI, английский, образование, игры...">
+      <button class="btn primary big full" id="generateBtn">✨ Сгенерировать идею</button>
+    </div>
+
+    <div class="card result hidden" id="resultCard"></div>
+
+    <div class="card hidden" id="promptCard">
+      <h2>🚀 AI Coding Prompt</h2>
+      <pre id="promptText"></pre>
+      <button class="btn primary" id="copyPromptBtn">📋 Скопировать промпт</button>
+    </div>
+  </section>
+
+  <!-- СОХРАНЁННЫЕ -->
+  <section id="view-saved" class="view">
+    <h2 class="title">⭐️ Сохранённые идеи</h2>
+    <div class="grid" id="savedList"></div>
+  </section>
+
+  <!-- ИСТОРИЯ -->
+  <section id="view-history" class="view">
+    <h2 class="title">🕘 История</h2>
+    <div class="grid" id="historyList"></div>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
